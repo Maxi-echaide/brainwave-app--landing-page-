@@ -5,6 +5,8 @@ import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
 import { useRef } from "react";
+import Generating from "./design/Generating";
+import Notification from "./Notification";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -51,6 +53,7 @@ const Hero = () => {
                   height={490}
                   alt="AI"
                 />
+                <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="hidden absolute -left-[5.5rem] bottom-[7.5] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
                     {heroIcons.map((icon, index) => (
@@ -59,6 +62,12 @@ const Hero = () => {
                       </li>
                     ))}
                   </ul>
+                </ScrollParallax>
+                <ScrollParallax isAbsolutelyPositioned>
+                  <Notification
+                    className="hidden absolute -right-[5.rem] bottom-[11rem] w-[18rem] xl:flex "
+                    title="Code generation"
+                  />
                 </ScrollParallax>
               </div>
             </div>
